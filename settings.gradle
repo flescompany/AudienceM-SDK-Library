@@ -1,0 +1,3 @@
+include ':AudienceM-SDK-Library'
+include ':app'
+rootProject.name = "TestAndroidLib"
