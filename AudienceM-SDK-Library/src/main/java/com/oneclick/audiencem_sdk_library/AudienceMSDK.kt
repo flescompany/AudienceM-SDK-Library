@@ -14,7 +14,7 @@ class AudienceMSDK(var mContext: Context, var AMKey: String) : AsyncTask<Void?, 
     fun AMInit(AMName:String, AMData: JSONObject) {
         val propertiesData = toProperties(AMData)
 
-        val analytics = Analytics.Builder(mContext, AMKey)
+        val analytics = Analytics.Builder(mContext, "BIPs9934EYbVKIU8zp86wBxM6JE0hhOn")
                 .trackApplicationLifecycleEvents() // Enable this to record certain application events automatically!
                 .recordScreenViews() // Enable this to record screen views automatically!
                 .build()
@@ -31,6 +31,8 @@ class AudienceMSDK(var mContext: Context, var AMKey: String) : AsyncTask<Void?, 
 
 
     fun toProperties(JsonData: JSONObject) : Properties {
+        JsonData.put("appKey",AMKey)
+
         val propertiesData = Properties()
 
         val parser = JsonParser()
